@@ -1,43 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PHL 101 – Introduction to Logic</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background: #f6f6f6; }
-        .container { max-width: 850px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
-        h1 { text-align: center; }
-        iframe { width: 100%; height: 450px; border: none; border-radius: 8px; }
-        .button {
-            display: block; width: 100%; text-align: center;
-            background: #0056b3; color: white; padding: 14px;
-            border-radius: 8px; text-decoration: none; margin-top: 15px;
-        }
-        .button:hover { background: #003f82; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHL 101 — Introduction to Philosophy</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
+
+    .site-header { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: #ffffff; }
+    .logo { height: 80px; width: auto; }
+    .header-title { text-align: center; }
+    .header-title h1 { margin: 0; font-size: 26px; font-weight: bold; color: #003300; }
+    .header-title h2 { margin: 3px 0; font-size: 18px; color: #444; }
+    .header-title h3 { margin: 3px 0; font-size: 16px; color: #777; }
+
+    .container { max-width: 900px; margin: 25px auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+    iframe { width: 100%; border: none; border-radius: 10px; }
+
+    .btn {
+      display:inline-block;
+      background:#0066cc;
+      color:white;
+      padding:10px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      margin-top:8px;
+    }
+
+    .small-note { font-size:13px; color:#666; margin-top:10px; }
+    .back-home { display:inline-block; margin-top:18px; text-decoration:none; color:#003300; font-weight:700; }
+    footer { text-align:center; padding:18px; color:#666; font-size:13px; margin-top:18px; }
+</style>
 </head>
 <body>
 
+<header class="site-header">
+    <img src="oau-logo.png" class="logo" alt="OAU Logo">
+    <div class="header-title">
+        <h1>TELEPRESENCE LIVE LECTURE PORTAL</h1>
+        <h2>Africa Centre of Excellence in ICT, OAK PARK</h2>
+        <h3>Faculty of Computing Science and Engineering</h3>
+    </div>
+    <img src="oakpark-logo.png" class="logo" alt="OAK PARK Logo">
+</header>
+
 <div class="container">
-    <h1>PHL 101 – Introduction to Logic</h1>
+    <h2>PHL 101 — Introduction to Philosophy</h2>
 
-    <h3>Live Lecture Stream</h3>
-    <iframe 
-        src="https://www.youtube.com/embed/wspBrk9uzp0"
-        allowfullscreen>
-    </iframe>
+    <h3>Live / Recorded Lecture</h3>
+    <iframe height="450" src="https://youtube.com/live/T-Qw3FWca3A?feature=share" allowfullscreen></iframe>
 
-    <a class="button" href="https://forms.gle/2Nzg8anaDniHDGTE9" target="_blank">Submit Attendance</a>
-    <a class="button" href="https://drive.google.com/drive/folders/1N4oyUhMxG4gwOyniCyUaEOsT44hQt86H?usp=sharing" target="_blank">Access Lecture Archives</a>
+    <h3>Attendance Form</h3>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdoP_ZBinodBaxxAiJvfP5FXfEfFX9qwh7fRUdbVpdJVs26Wg/viewform?embedded=true" height="1400">Loading…</iframe>
 
-    <h3>Instructions</h3>
-    <ul>
-        <li>Watch the live stream on time.</li>
-        <li>Three attendance codes will be displayed during the lecture.</li>
-        <li>Fill in the correct codes using the attendance form.</li>
-        <li>Past lectures, notes, and resources are available in the Drive archive.</li>
-    </ul>
+    <h3>Lecture Materials & Archive</h3>
+    <p style="color:#555;">Slides, recordings and additional files for this course are stored in the Telepresence Archive.</p>
+    <p>
+      <a href="https://drive.google.com/drive/folders/1N4oyUhMxG4gwOyniCyUaEOsT44hQt86H?usp=sharing"
+         target="_blank" class="btn">Open Course Archive (Google Drive)</a>
+    </p>
 
+    <p class="small-note">Slides uploaded 24 hours before class. Recordings added after session ends.</p>
+
+    <p><a href="index.html" class="back-home">← Back to Home</a></p>
 </div>
+
+<footer>
+  © Africa Centre of Excellence — OAK PARK, Obafemi Awolowo University
+</footer>
+
 </body>
 </html>

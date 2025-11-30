@@ -1,155 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Telepresence Live Lecture Portal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2efe8;
-            margin: 0;
-            padding: 0;
-        }
-
-        .site-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: #ffffff;
-            border-bottom: 4px solid #0a3d0a;
-        }
-
-        .logo {
-            height: 80px;
-        }
-
-        .header-title {
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        .header-title h1 {
-            margin: 0;
-            font-size: 26px;
-            color: #003300;
-        }
-
-        .header-title h2 {
-            margin: 5px 0;
-            font-size: 18px;
-            color: #444;
-        }
-
-        .header-title h3 {
-            margin: 5px 0;
-            font-size: 16px;
-            color: #666;
-        }
-
-        .banner-img {
-            width: 100%;
-            margin-top: 10px;
-            border-radius: 10px;
-        }
-
-        .leaders-section {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .leader-box {
-            flex: 1;
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 0 6px rgba(0,0,0,0.15);
-        }
-
-        .leader-box p {
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
-        .telepresence-photo {
-            width: 100%;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            display: block;
-        }
-
-        .buttons-area {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .btn {
-            display: block;
-            background: #0a3d0a;
-            color: white;
-            padding: 14px;
-            margin: 10px auto;
-            width: 80%;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-            max-width: 400px;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>OAU Telepresence Lecture Portal</title>
+<style>
+  :root{
+    --header:#002147;
+    --body:#d9e8ff;
+    --card:#ffffff;
+    --btn:#0066cc;
+    --muted:#555;
+    --maxw:1100px;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter, "Segoe UI", Roboto, Arial,sans-serif;background:var(--body);color:#111}
+  /* Header */
+  header.site-header{background:var(--header);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+  .logo{height:64px;object-fit:contain}
+  .header-center{text-align:center;flex:1;padding:0 12px}
+  .header-center h1{margin:0;font-size:20px;letter-spacing:0.6px}
+  .header-center p{margin:4px 0 0 0;color:rgba(255,255,255,0.9);font-size:13px}
+  /* Main container */
+  .container{max-width:var(--maxw);margin:22px auto;padding:18px}
+  /* Banner above messages */
+  .banner{width:100%;height:240px;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+  .banner img{width:100%;height:100%;object-fit:cover;display:block}
+  /* Leaders: two columns */
+  .leaders{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+  .leader-card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  .leader-card p{margin:0;color:var(--muted);line-height:1.6}
+  /* Buttons / courses */
+  .courses{margin-top:22px}
+  .course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .course{background:var(--card);padding:14px;border-radius:10px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  .course h3{margin:8px 0;color:var(--header)}
+  .btn{display:inline-block;background:var(--btn);color:#fff;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+  .wide-btn{display:block;margin:12px auto 0 auto;width:220px;text-align:center}
+  /* telepresence final photo */
+  .tele{margin-top:26px;border-radius:12px;overflow:hidden;box-shadow:0 8px 26px rgba(0,0,0,0.08)}
+  .tele img{width:100%;height:450px;object-fit:cover;display:block}
+  footer{max-width:var(--maxw);margin:26px auto;padding:12px;color:var(--muted);text-align:center}
+  @media(max-width:900px){
+    .leaders{grid-template-columns:1fr}
+    .banner{height:200px}
+  }
+</style>
 </head>
 <body>
 
-    <header class="site-header">
-        <img src="oau-logo.png" class="logo">
-        <div class="header-title">
-            <h1>TELEPRESENCE LIVE LECTURE PORTAL</h1>
-            <h2>Africa Centre of Excellence in ICT, OAK PARK</h2>
-            <h3>Coordinating Unit: Faculty of Computing Science and Engineering</h3>
-        </div>
-        <img src="oak-park-logo.png" class="logo">
-    </header>
+<header class="site-header">
+  <img src="oau-logo.png" alt="OAU logo" class="logo">
+  <div class="header-center">
+    <h1>TELEPRESENCE LIVE LECTURE PORTAL</h1>
+    <p>Coordinating Unit: Faculty of Computing Science and Engineering<br> Africa Centre of Excellence in ICT, OAK PARK</p>
+  </div>
+  <img src="oakpark-logo.png" alt="OAK PARK logo" class="logo">
+</header>
 
-    <!-- LARGE FEATURE BANNER -->
-    <img src="telepresence2.jpg" class="banner-img">
+<main class="container">
+  <!-- banner (telepresence2) -->
+  <div class="banner" aria-hidden="true">
+    <img src="telepresence2.jpg" alt="Telepresence banner">
+  </div>
 
-    <!-- TWO LEADERSHIP MESSAGES IN 2 COLUMNS -->
-    <div class="leaders-section">
-        <div class="leader-box">
-            <p>
-                The Telepresence Live Lecture Portal marks a major transformation in remote learning and 
-                academic collaboration at our Centre. By leveraging high-performance visualization, 
-                modern teleconferencing infrastructure, and virtual presence technology, this portal 
-                ensures that students across departments and faculties access their lectures in real time, 
-                without barriers or delays. 
-            </p>
-        </div>
-
-        <div class="leader-box">
-            <p>
-                As you explore this platform, we encourage all students to take full advantage of the 
-                improved delivery method. The system is designed to support seamless learning, promote 
-                engagement, and extend access beyond physical lecture spaces. Commit yourself to using 
-                this platform regularly for a better academic experience.
-            </p>
-        </div>
+  <!-- two messages (no names/designations) -->
+  <section class="leaders" aria-label="Leadership messages">
+    <div class="leader-card">
+      <p>
+        The Telepresence Live Lecture Portal marks a major transformation in remote learning and academic collaboration.
+        By leveraging modern telepresence and streaming infrastructure, students across faculties can access synchronous lectures,
+        interact with instructors, and retrieve archived materials for review and study.
+      </p>
     </div>
 
-    <!-- TELEPRESENCE FACILITY PHOTO -->
-    <img src="telepresence.jpg" class="telepresence-photo">
+    <div class="leader-card">
+      <p>
+        This platform supports resilient teaching and learning, enabling uninterrupted academic delivery, virtual collaboration,
+        and improved access to subject-matter expertise. Students are encouraged to participate actively and use the portal's resources.
+      </p>
+    </div>
+  </section>
 
-    <!-- BUTTONS -->
-    <div class="buttons-area">
-        <a href="csc101.html" class="btn">CSC 101</a>
-        <a href="csc201.html" class="btn">CSC 201</a>
-        <a href="csc203.html" class="btn">CSC 203</a>
-        <a href="csc205.html" class="btn">CSC 205</a>
-        <a href="csc207.html" class="btn">CSC 207</a>
-        <a href="archive.html" class="btn">Lecture Archive</a>
-        <a href="contact.html" class="btn" style="background:#8a1c00;">Contact Us</a>
+  <!-- courses -->
+  <section class="courses" aria-label="Courses">
+    <h2 style="color:var(--header);margin:18px 0 10px 0">Available Courses</h2>
+    <div class="course-grid">
+      <div class="course"><h3>CSC 101</h3><p style="color:var(--muted)">Introduction to Computer Science</p><a class="btn" href="csc101.html">Open course</a></div>
+      <div class="course"><h3>CSC 201</h3><p style="color:var(--muted)">Computer Programming I</p><a class="btn" href="csc201.html">Open course</a></div>
+      <div class="course"><h3>COS 101</h3><p style="color:var(--muted)">Introduction to Computer Science</p><a class="btn" href="cos101.html">Open course</a></div>
+      <div class="course"><h3>CSC 221</h3><p style="color:var(--muted)">Computer Appreciation</p><a class="btn" href="csc221.html">Open course</a></div>
+      <div class="course"><h3>PHL 101</h3><p style="color:var(--muted)">Introduction to Logic</p><a class="btn" href="phl101.html">Open course</a></div>
     </div>
 
+    <!-- archive + contact buttons -->
+    <div style="text-align:center;margin-top:18px">
+      <a class="btn wide-btn" href="https://drive.google.com/drive/folders/1N4oyUhMxG4gwOyniCyUaEOsT44hQt86H?usp=sharing" target="_blank">Lecture Archive</a>
+      <a class="btn wide-btn" href="contact.html" style="background:#8a1c00;margin-top:10px">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- telepresence facility photo after buttons -->
+  <div class="tele" aria-hidden="true">
+    <img src="telepresence.jpg" alt="Telepresence Live Lecture Facility">
+  </div>
+
+</main>
+
+<footer>© 2025 Africa Centre of Excellence in ICT — OAK PARK, Obafemi Awolowo University</footer>
 </body>
 </html>
-

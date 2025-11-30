@@ -1,263 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>OAU Telepresence Lecture Portal</title>
-<style>
-  :root{
-    --primary:#003300;
-    --accent:#0066cc;
-    --bg:#f8f5ef;
-    --card:#ffffff;
-    --muted:#666666;
-    --radius:12px;
-    --maxw:1100px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
-    background:var(--bg);
-    color:#111;
-  }
+    <title>Telepresence Live Lecture Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2efe8;
+            margin: 0;
+            padding: 0;
+        }
 
-  /* Header */
-  .site-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:14px 18px;
-    background:var(--card);
-    box-shadow:0 2px 6px rgba(0,0,0,0.06);
-  }
-  .logo{height:64px;width:auto}
-  .header-title{text-align:center;flex:1;padding:0 12px}
-  .header-title h1{margin:0;font-size:20px;color:var(--primary)}
-  .header-title p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #ffffff;
+            border-bottom: 4px solid #0a3d0a;
+        }
 
-  /* Page container */
-  .container{
-    max-width:var(--maxw);
-    margin:28px auto;
-    padding:0 18px;
-  }
+        .logo {
+            height: 80px;
+        }
 
-  /* Leadership section: photos on top, messages under them; cards side-by-side */
-  .lead-row{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    margin-bottom:18px;
-  }
+        .header-title {
+            text-align: center;
+            flex-grow: 1;
+        }
 
-  .card{
-    background:var(--card);
-    padding:18px;
-    border-radius:var(--radius);
-    box-shadow:0 6px 18px rgba(11,15,25,0.04);
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
+        .header-title h1 {
+            margin: 0;
+            font-size: 26px;
+            color: #003300;
+        }
 
-  /* Wide building images (the two oak-park photos) */
-  .leader-photo {
-    width: 45%;       /* wider */
-    height: auto;     /* keeps proportions */
-    border-radius: 7px;
-    object-fit: cover;
-}
+        .header-title h2 {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #444;
+        }
 
+        .header-title h3 {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #666;
+        }
 
+        .banner-img {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
 
-  /* Message text sits under the image; names/titles below the message */
-  .card .message{
-    color:var(--muted);
-    font-size:15px;
-    line-height:1.5;
-    margin:0 0 12px 0;
-    text-align:left;
-    max-width:100%;
-  }
-  .card .byline{
-    margin-top:6px;
-    font-weight:700;
-    color:#333;
-    font-size:14px;
-  }
+        .leaders-section {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
 
-  /* Courses grid */
-  .courses{margin-top:22px}
-  .course-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:16px;
-    margin-top:12px;
-  }
-  .course{
-    background:var(--card);
-    padding:16px;
-    border-radius:12px;
-    box-shadow:0 6px 18px rgba(11,15,25,0.04);
-    text-align:center;
-  }
-  .course h4{margin:8px 0;color:var(--primary)}
-  .course p{color:var(--muted);margin:0 0 12px 0;font-size:13px}
-  .cta{
-    display:inline-block;
-    background:var(--accent);
-    color:white;
-    padding:10px 14px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:700;
-  }
+        .leader-box {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.15);
+        }
 
-  /* Telepresence facility photo (bottom) */
-  .tele-photo{
-    margin-top:26px;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 8px 26px rgba(11,15,25,0.06);
-  }
-  .tele-photo img{
-    width:100%;
-    height:450px;               /* telepresence height (kept per your A choice) */
-    object-fit:cover;
-    display:block;
-  }
+        .leader-box p {
+            font-size: 15px;
+            line-height: 1.5;
+        }
 
-  footer{
-    background:var(--card);
-    padding:18px;
-    text-align:center;
-    margin-top:28px;
-    border-top:1px solid rgba(0,0,0,0.04);
-    color:var(--muted);
-  }
+        .telepresence-photo {
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            display: block;
+        }
 
-  /* Responsive */
-  @media(max-width:1000px){
-    .wide-photo{width:60%}
-  }
-  @media(max-width:900px){
-    .lead-row{grid-template-columns:1fr}
-    .wide-photo{width:100%;height:320px}
-    .card .message{text-align:left}
-    .card{align-items:flex-start}
-  }
-  @media(max-width:520px){
-    .logo{height:52px}
-    .header-title h1{font-size:16px}
-  }
-</style>
+        .buttons-area {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .btn {
+            display: block;
+            background: #0a3d0a;
+            color: white;
+            padding: 14px;
+            margin: 10px auto;
+            width: 80%;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            max-width: 400px;
+        }
+    </style>
 </head>
 <body>
 
-<header class="site-header">
-  <img src="oau-logo.png" alt="OAU logo" class="logo">
-  <div class="header-title">
-    <h1>TELEPRESENCE LIVE LECTURE PORTAL</h1>
-    <p>Africa Centre of Excellence in ICT, OAK PARK</p>
-    <p>Coordinating Unit — Faculty of Computing Science & Engineering</p>
-  </div>
-  <img src="oakpark-logo.png" alt="OAK PARK logo" class="logo">
-</header>
+    <header class="site-header">
+        <img src="oau-logo.png" class="logo">
+        <div class="header-title">
+            <h1>TELEPRESENCE LIVE LECTURE PORTAL</h1>
+            <h2>Africa Centre of Excellence in ICT, OAK PARK</h2>
+            <h3>Faculty of Computing Science and Engineering</h3>
+        </div>
+        <img src="oak-park-logo.png" class="logo">
+    </header>
 
-<div class="container">
+    <!-- LARGE FEATURE BANNER -->
+    <img src="telepresence2.jpg" class="banner-img">
 
-  <!-- Leadership cards: building images (top), messages below, names/titles under messages -->
-  <div class="lead-row">
-    <div class="card">
-      <img src="oak-park2.jpg" alt="OAK PARK Building" class="wide-photo">
-      <p class="message">
-        The Telepresence Live Lecture Portal marks an important milestone in our digital teaching strategy at Africa Centre of Excellence, Obafemi Awolowo University.
-        By bringing high-quality, synchronous lectures into students’ homes and study spaces, we strengthen teaching continuity, broaden access to expert instruction, and develop resilient learning pathways across faculties.
-      </p>
-      
+    <!-- TWO LEADERSHIP MESSAGES IN 2 COLUMNS -->
+    <div class="leaders-section">
+        <div class="leader-box">
+            <p>
+                The Telepresence Live Lecture Portal marks a major transformation in remote learning and 
+                academic collaboration at our Centre. By leveraging high-performance visualization, 
+                modern teleconferencing infrastructure, and virtual presence technology, this portal 
+                ensures that students across departments and faculties access their lectures in real time, 
+                without barriers or delays. 
+            </p>
+        </div>
+
+        <div class="leader-box">
+            <p>
+                As you explore this platform, we encourage all students to take full advantage of the 
+                improved delivery method. The system is designed to support seamless learning, promote 
+                engagement, and extend access beyond physical lecture spaces. Commit yourself to using 
+                this platform regularly for a better academic experience.
+            </p>
+        </div>
     </div>
 
-    <div class="card">
-      <img src="oak-park3.jpg" alt="OAK PARK Facility" class="wide-photo">
-      <p class="message">
-        Our Faculty embraces this Telepresence initiative as a strategic opportunity to enhance learning experiences and academic reach.
-        Students across departments are encouraged to engage actively with live lectures, review archived resources, and make full use of the digital tools provided to support their academic success.
-      </p>
-     
-  </div>
+    <!-- TELEPRESENCE FACILITY PHOTO -->
+    <img src="telepresence.jpg" class="telepresence-photo">
 
-  <!-- Course buttons -->
-  <section class="courses">
-    <h2 style="margin:0 0 8px 0;color:var(--primary)">Available Courses</h2>
-    <div class="course-grid">
-      <div class="course">
-        <h4>CSC 101</h4>
-        <p>Introduction to Computer Science</p>
-        <a class="cta" href="csc101.html">Open course</a>
-      </div>
-      <div class="course">
-        <h4>CSC 201</h4>
-        <p>Computer Programming I</p>
-        <a class="cta" href="csc201.html">Open course</a>
-      </div>
-      <div class="course">
-        <h4>COS 101</h4>
-        <p>Introduction to Computer Science</p>
-        <a class="cta" href="cos101.html">Open course</a>
-      </div>
-      <div class="course">
-        <h4>CSC 221</h4>
-        <p>Computer Appreciation</p>
-        <a class="cta" href="csc221.html">Open course</a>
-      </div>
-      <div class="course">
-        <h4>PHL 101</h4>
-        <p>Introduction to Logic / Philosophy</p>
-        <a class="cta" href="phl101.html">Open course</a>
-      </div>
+    <!-- BUTTONS -->
+    <div class="buttons-area">
+        <a href="csc101.html" class="btn">CSC 101</a>
+        <a href="csc201.html" class="btn">CSC 201</a>
+        <a href="csc203.html" class="btn">CSC 203</a>
+        <a href="csc205.html" class="btn">CSC 205</a>
+        <a href="csc207.html" class="btn">CSC 207</a>
+        <a href="archive.html" class="btn">Lecture Archive</a>
+        <a href="contact.html" class="btn" style="background:#8a1c00;">Contact Us</a>
     </div>
-  </section>
-
-  <!-- Telepresence facility photo (bottom of homepage) -->
-  <div class="tele-photo" style="margin-top:28px;">
-    <img src="telepresence.jpg" alt="Telepresence Live Lecture Facility — OAK PARK">
-  </div>
-
-</div>
-
-<footer>
-  © 2025 Africa Centre of Excellence in ICT — OAK PARK, Obafemi Awolowo University
-</footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,110 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contact Us - Telepresence Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            background: #f2efe8;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .header {
-            text-align: center;
-            padding: 25px;
-            background: #ffffff;
-            border-bottom: 4px solid #0a3d0a;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 26px;
-            color: #003300;
-        }
-
-        .section {
-            padding: 20px;
-        }
-
-        .section h2 {
-            margin-top: 0;
-            color: #222;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .gallery img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            border-radius: 12px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .contact-box {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 25px;
-            box-shadow: 0 0 6px rgba(0,0,0,0.2);
-        }
-
-        .back-btn {
-            display: block;
-            width: 200px;
-            margin: 30px auto;
-            text-align: center;
-            background: #0a3d0a;
-            color: white;
-            padding: 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Telepresence Services</title>
+<style>
+  :root{--header:#002147;--body:#d9e8ff;--card:#fff;--muted:#444;--btn:#0066cc;--radius:12px;--maxw:1100px}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--body);color:#111}
+  header{background:var(--header);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+  .logo{height:56px}
+  .header-center{text-align:center;flex:1}
+  .container{max-width:var(--maxw);margin:22px auto;padding:18px}
+  h1{color:var(--header);margin:0 0 12px 0}
+  .card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+  .gallery-item{text-align:center}
+  .gallery-item img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
+  .label{font-size:13px;color:var(--muted);margin-top:6px}
+  .full-img{margin-top:18px;border-radius:10px;overflow:hidden}
+  .full-img img{width:100%;height:320px;object-fit:cover;display:block;border-radius:10px}
+  .contact-block{margin-top:18px;padding:12px;background:var(--card);border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  .back{display:inline-block;margin-top:14px;padding:10px 14px;background:var(--btn);color:#fff;border-radius:8px;text-decoration:none}
+  @media(max-width:700px){.full-img img{height:220px}}
+</style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Telepresence Services & Contact Information</h1>
+<header>
+  <img src="oau-logo.png" alt="OAU logo" class="logo">
+  <div class="header-center">
+    <h2 style="color:#fff;margin:0">Telepresence Services & Contact</h2>
+  </div>
+  <img src="oakpark-logo.png" alt="OAK PARK logo" class="logo">
+</header>
+
+<main class="container">
+  <div class="card">
+    <h1>Other Telepresence Services Available</h1>
+    <ul>
+      <li>Postgraduate Virtual Oral Exams</li>
+      <li>Virtual Symposia, Workshops & Conferences</li>
+      <li>Virtual Research Collaborations</li>
+      <li>Presentation layer for CPU-intensive simulations</li>
+      <li>Data Storage Facilities at the Telepresence Data Center</li>
+    </ul>
+
+    <h2 style="margin-top:18px">Postgraduate Oral Exams — Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="postgraduate.jpg" alt="Postgraduate oral exam 1">
+        <div class="label">Postgraduate Oral Examination Session</div>
+      </div>
+      <div class="gallery-item">
+        <img src="postgraduate2.jpg" alt="Postgraduate oral exam 2">
+        <div class="label">Postgraduate Oral Examination — Room View</div>
+      </div>
+      <div class="gallery-item">
+        <img src="postgraduate3.jpg" alt="Postgraduate oral exam 3">
+        <div class="label">Remote Examination Setup</div>
+      </div>
+      <div class="gallery-item">
+        <img src="postgraduate4.jpg" alt="Postgraduate oral exam 4">
+        <div class="label">Telepresence-Based PG Oral Defense</div>
+      </div>
     </div>
 
-    <div class="section">
-        <h2>Other Telepresence Services Available</h2>
-        <ul>
-            <li>Postgraduate Virtual Oral Exams</li>
-            <li>Virtual Symposia, Workshops & Conferences</li>
-            <li>Virtual Research Collaborations</li>
-            <li>Presentation layer for CPU-intensive simulations</li>
-            <li>Data Storage Facilities at the Telepresence Data Center</li>
-        </ul>
-
-        <h2>Photo Gallery</h2>
-        <div class="gallery">
-            <img src="postgraduate.jpg">
-            <img src="postgraduate2.jpg">
-            <img src="postgraduate3.jpg">
-            <img src="postgraduate4.jpg">
-            <img src="research.jpg">
-            <img src="data center.jpg">
-        </div>
-
-        <div class="contact-box">
-            <h2>Contact Person</h2>
-            <p><b>Dr. Abiodun Akinwale</b></p>
-            <p>📞 +234-806-844-3742</p>
-            <p>📧 acetelepresence@oauife.edu.ng</p>
-        </div>
-
-        <a href="index.html" class="back-btn">Back to Home</a>
+    <h2 style="margin-top:18px">Research Collaboration</h2>
+    <div class="full-img">
+      <img src="research.jpg" alt="Research collaboration">
+      <div class="label" style="padding:8px 0;text-align:center">Virtual Research Collaboration</div>
     </div>
+
+    <h2 style="margin-top:18px">Data Center</h2>
+    <div class="full-img">
+      <img src="data%20center.jpg" alt="Data center">
+      <div class="label" style="padding:8px 0;text-align:center">Telepresence Data Center Infrastructure</div>
+    </div>
+
+    <div class="contact-block">
+      <h3>Contact Person</h3>
+      <p><strong>Dr. Abiodun Akinwale</strong></p>
+      <p>📞 +234-806-844-3742</p>
+      <p>📧 acetelepresence@oauife.edu.ng</p>
+      <a class="back" href="index.html">← Back to Home</a>
+    </div>
+
+  </div>
+</main>
 
 </body>
 </html>

@@ -1,171 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Telepresence Live Lecture Portal</title>
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>OAU Telepresence Lecture Portal</title>
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #d9e9ff; /* light blue for all pages */
-    }
-
-    /* HEADER BANNER */
-    .header {
-        background-color: #002b6b; /* dark blue */
-        color: white;
-        padding: 20px 10px;
-        text-align: center;
-    }
-    .header img {
-        height: 80px;
-        margin: 0 10px;
-        vertical-align: middle;
-    }
-
-    /* NAV BUTTONS */
-    .nav-buttons {
-        text-align: center;
-        margin: 20px 0;
-    }
-    .nav-buttons a {
-        display: inline-block;
-        margin: 10px;
-        padding: 12px 22px;
-        background-color: #004aad;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        font-size: 16px;
-    }
-    .nav-buttons a:hover {
-        background-color: #00357a;
-    }
-
-    /* TELEPRESENCE MAIN BANNER ABOVE MESSAGES */
-    .top-banner {
-        width: 90%;
-        margin: 20px auto 0 auto;
-        display: block;
-        border-radius: 8px;
-    }
-
-    /* TWO-COLUMN SECTION */
-    .two-columns {
-        display: flex;
-        justify-content: space-between;
-        width: 90%;
-        margin: 20px auto;
-        gap: 20px;
-    }
-    .column {
-        width: 50%;
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 8px rgba(0,0,0,0.15);
-    }
-
-    /* CONTACT PAGE IMAGES */
-    .contact-img {
-        width: 90%;
-        border-radius: 8px;
-        display: block;
-        margin: 10px auto;
-    }
-    .label {
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
+  :root{
+    --header:#002147;
+    --body:#d9e8ff;
+    --card:#ffffff;
+    --btn:#0066cc;
+    --muted:#555;
+    --maxw:1100px;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter, "Segoe UI", Roboto, Arial,sans-serif;background:var(--body);color:#111}
+  /* Header */
+  header.site-header{background:var(--header);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+  .logo{height:64px;object-fit:contain}
+  .header-center{text-align:center;flex:1;padding:0 12px}
+  .header-center h1{margin:0;font-size:20px;letter-spacing:0.6px}
+  .header-center p{margin:4px 0 0 0;color:rgba(255,255,255,0.9);font-size:13px}
+  /* Main container */
+  .container{max-width:var(--maxw);margin:22px auto;padding:18px}
+  /* Banner above messages */
+  .banner{width:100%;height:240px;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+  .banner img{width:100%;height:100%;object-fit:cover;display:block}
+  /* Leaders: two columns */
+  .leaders{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+  .leader-card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  .leader-card p{margin:0;color:var(--muted);line-height:1.6}
+  /* Buttons / courses */
+  .courses{margin-top:22px}
+  .course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .course{background:var(--card);padding:14px;border-radius:10px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  .course h3{margin:8px 0;color:var(--header)}
+  .btn{display:inline-block;background:var(--btn);color:#fff;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+  .wide-btn{display:block;margin:12px auto 0 auto;width:220px;text-align:center}
+  /* telepresence final photo */
+  .tele{margin-top:26px;border-radius:12px;overflow:hidden;box-shadow:0 8px 26px rgba(0,0,0,0.08)}
+  .tele img{width:100%;height:450px;object-fit:cover;display:block}
+  footer{max-width:var(--maxw);margin:26px auto;padding:12px;color:var(--muted);text-align:center}
+  @media(max-width:900px){
+    .leaders{grid-template-columns:1fr}
+    .banner{height:200px}
+  }
 </style>
-
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
-<div class="header">
-    <img src="oakpark-logo.png" alt="Oak Park Logo">
-    <img src="oau-logo.png" alt="OAU Logo">
-
+<header class="site-header">
+  <img src="oau-logo.png" alt="OAU logo" class="logo">
+  <div class="header-center">
     <h1>TELEPRESENCE LIVE LECTURE PORTAL</h1>
-    <h2>Coordinating Unit: Faculty of Computing Science and Engineering</h2>
-</div>
+    <p>Coordinating Unit: Faculty of Computing Science and Engineering<br> Africa Centre of Excellence in ICT, OAK PARK</p>
+  </div>
+  <img src="oakpark-logo.png" alt="OAK PARK logo" class="logo">
+</header>
 
+<main class="container">
+  <!-- banner (telepresence2) -->
+  <div class="banner" aria-hidden="true">
+    <img src="telepresence2.jpg" alt="Telepresence banner">
+  </div>
 
-<!-- ================= MAIN NAV BUTTONS ================= -->
-<div class="nav-buttons">
-    <a href="#courses">Available Courses</a>
-    <a href="#archive">Lecture Archive</a>
-    <a href="#contact">Contact Us</a>
-</div>
-
-
-<!-- ================= TELEPRESENCE BANNER ABOVE TWO MESSAGES ================= -->
-<img src="telepresence2.jpg" alt="Telepresence Banner" class="top-banner">
-
-
-<!-- ================= TWO COLUMN MESSAGES ================= -->
-<div class="two-columns">
-    <div class="column">
-        <p>
-            The Telepresence Live Lecture Portal marks a significant advancement in remote academic delivery,
-            allowing lectures to be streamed live with high clarity and real-time interaction.
-        </p>
+  <!-- two messages (no names/designations) -->
+  <section class="leaders" aria-label="Leadership messages">
+    <div class="leader-card">
+      <p>
+        The Telepresence Live Lecture Portal marks a major transformation in remote learning and academic collaboration.
+        By leveraging modern telepresence and streaming infrastructure, students across faculties can access synchronous lectures,
+        interact with instructors, and retrieve archived materials for review and study.
+      </p>
     </div>
 
-    <div class="column">
-        <p>
-            This platform expands the boundaries of digital learning, enabling seamless communication between
-            lecturers and students across distant locations, while preserving classroom engagement quality.
-        </p>
+    <div class="leader-card">
+      <p>
+        This platform supports resilient teaching and learning, enabling uninterrupted academic delivery, virtual collaboration,
+        and improved access to subject-matter expertise. Students are encouraged to participate actively and use the portal's resources.
+      </p>
     </div>
-</div>
+  </section>
 
+  <!-- courses -->
+  <section class="courses" aria-label="Courses">
+    <h2 style="color:var(--header);margin:18px 0 10px 0">Available Courses</h2>
+    <div class="course-grid">
+      <div class="course"><h3>CSC 101</h3><p style="color:var(--muted)">Introduction to Computer Science</p><a class="btn" href="csc101.html">Open course</a></div>
+      <div class="course"><h3>CSC 201</h3><p style="color:var(--muted)">Computer Programming I</p><a class="btn" href="csc201.html">Open course</a></div>
+      <div class="course"><h3>COS 101</h3><p style="color:var(--muted)">Introduction to Computer Science</p><a class="btn" href="cos101.html">Open course</a></div>
+      <div class="course"><h3>CSC 221</h3><p style="color:var(--muted)">Computer Appreciation</p><a class="btn" href="csc221.html">Open course</a></div>
+      <div class="course"><h3>PHL 101</h3><p style="color:var(--muted)">Introduction to Logic</p><a class="btn" href="phl101.html">Open course</a></div>
+    </div>
 
-<!-- ================= CONTACT US PAGE ================= -->
-<div id="contact" class="two-columns" style="flex-direction: column; width: 95%;">
-    
-    <h2 style="text-align:center;">Other Telepresence Services Available</h2>
+    <!-- archive + contact buttons -->
+    <div style="text-align:center;margin-top:18px">
+      <a class="btn wide-btn" href="https://drive.google.com/drive/folders/1N4oyUhMxG4gwOyniCyUaEOsT44hQt86H?usp=sharing" target="_blank">Lecture Archive</a>
+      <a class="btn wide-btn" href="contact.html" style="background:#8a1c00;margin-top:10px">Contact Us</a>
+    </div>
+  </section>
 
-    <ul style="font-size: 18px; margin-left: 40px;">
-        <li>Postgraduate Virtual Oral Exams</li>
-        <li>Virtual Symposia, Workshop and Conference Hosting</li>
-        <li>Virtual Research Collaborations</li>
-        <li>Presentation Layer for CPU-Intensive Simulations</li>
-        <li>Data Storage Facilities at Telepresence Data Center</li>
-    </ul>
+  <!-- telepresence facility photo after buttons -->
+  <div class="tele" aria-hidden="true">
+    <img src="telepresence.jpg" alt="Telepresence Live Lecture Facility">
+  </div>
 
-    <!-- Postgraduate Oral Exams Photos -->
-    <img src="postgraduate.jpg" class="contact-img">
-    <div class="label">Postgraduate Virtual Oral Exams</div>
+</main>
 
-    <img src="postgraduate2.jpg" class="contact-img">
-    <div class="label">Postgraduate Virtual Oral Exams</div>
-
-    <img src="postgraduate3.jpg" class="contact-img">
-    <div class="label">Postgraduate Virtual Oral Exams</div>
-
-    <img src="postgraduate4.jpg" class="contact-img">
-    <div class="label">Postgraduate Virtual Oral Exams</div>
-
-    <!-- Research Collaboration -->
-    <img src="research.jpg" class="contact-img">
-    <div class="label">Research Collaboration</div>
-
-    <!-- Data Center -->
-    <img src="data center.jpg" class="contact-img">
-    <div class="label">Telepresence Data Center</div>
-
-    <h3 style="text-align:center; margin-top:30px;">For More Information, Contact:</h3>
-    <p style="text-align:center; font-size:18px;">
-        Dr. Abiodun Akinwale<br>
-        +234-806-844-3742<br>
-        acetelepresence@oauife.edu.ng
-    </p>
-</div>
-
+<footer>© 2025 Africa Centre of Excellence in ICT — OAK PARK, Obafemi Awolowo University</footer>
 </body>
 </html>

@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>COS 101 — Introduction to Computer Science</title>
+<meta charset="UTF-8">
+<title>COS 101 Live Class</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  :root{--header:#002147;--body:#d9e8ff;--card:#fff;--btn:#0066cc;--muted:#444;--radius:10px}
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--body)}
-  header{background:var(--header);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
-  .logo{height:56px}
-  .header-center{text-align:center;flex:1}
-  .container{max-width:900px;margin:20px auto;padding:18px;background:var(--card);border-radius:10px}
-  h2{color:var(--header)}
-  iframe{width:100%;height:480px;border:0;border-radius:8px}
-  .btn{display:block;width:100%;padding:12px;margin-top:12px;border-radius:8px;text-align:center;text-decoration:none;background:var(--btn);color:#fff;font-weight:700}
-  .back{background:#0055aa}
-  footer{text-align:center;color:var(--muted);padding:12px;margin-top:14px}
+  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f8f8f8; }
+  header { background:#003366; color:white; padding:20px; text-align:center; }
+  .container { max-width:900px; margin:20px auto; padding:10px; }
+  iframe { width:100%; height:500px; border:none; }
+  .btn {
+    display:block; width:100%; background:#0073e6; color:white;
+    padding:15px; text-align:center; text-decoration:none; margin-top:20px;
+    border-radius:5px; font-size:18px;
+  }
+  .btn:hover { background:#005bb5; }
 </style>
 </head>
 <body>
 
 <header>
-  <img src="oau-logo.png" alt="OAU logo" class="logo">
-  <div class="header-center"><h1 style="margin:0">TELEPRESENCE LIVE LECTURE PORTAL</h1></div>
-  <img src="oakpark-logo.png" alt="OAK PARK logo" class="logo">
+  <h1>COS 101 – Live Lecture</h1>
 </header>
 
-<main class="container">
-  <h2>COS 101 — Introduction to Computer Science</h2>
+<div class="container">
 
+  <!-- Permanent YouTube Live Embed -->
   <iframe
     src="https://www.youtube.com/embed/live_stream?channel=UCiySvNxghvpCaW9JDgvJp3A&autoplay=1"
     allowfullscreen>
   </iframe>
 
-  <a class="btn" href="https://forms.gle/2Nzg8anaDniHDGTE9" target="_blank" rel="noopener">Submit Attendance</a>
-  <a class="btn" href="https://drive.google.com/drive/folders/1N4oyUhMxG4gwOyniCyUaEOsT44hQt86H?usp=sharing" target="_blank" rel="noopener">View Course Archive</a>
-  <a class="btn back" href="index.html">← Back to Home</a>
-</main>
+  <!-- Attendance Form Button -->
+  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdHbVCE69I3KmHJ7oC12ThBnp6GgnH2t6-U709tdp2lsWJg8w/viewform"
+     target="_blank">
+     Submit Attendance
+  </a>
 
-<footer>© 2025 Africa Centre of Excellence — OAK PARK, Obafemi Awolowo University</footer>
+</div>
+
 </body>
 </html>
-
-
-
